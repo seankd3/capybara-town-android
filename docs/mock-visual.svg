@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" role="img" aria-labelledby="title desc">
-  <title id="title">Capybara Town polished rodent sanctuary mock visual</title>
-  <desc id="desc">A phone mock showing the warmer Canvas-only rodent sanctuary direction with richer paths, hydrotherapy pond, forage table, burrow, typed snack UI, cute caretaker, capybara, guinea pig, and gerbil.</desc>
+  <title id="title">Capybara Town rodent sanctuary life-sim mock visual</title>
+  <desc id="desc">A phone mock showing the warmer Canvas-only rodent sanctuary direction with richer paths, hydrotherapy pond, forage table, burrow, typed snack UI, cute caretaker, capybara, guinea pig, gerbil, and a resident personality moment card.</desc>
   <rect width="390" height="844" fill="#f4e1be"/>
   <rect x="10" y="8" width="362" height="104" rx="24" fill="#3d301f" opacity="0.14"/>
   <rect x="10" y="8" width="362" height="104" rx="24" fill="#fff9e5"/>
@@ -142,6 +142,13 @@
     <rect x="72" y="610" width="12" height="7" rx="2"/>
     <rect x="330" y="554" width="12" height="7" rx="2"/>
   </g>
+
+  <rect x="17" y="122" width="356" height="58" rx="18" fill="#3d301f" opacity="0.16"/>
+  <rect x="16" y="118" width="356" height="58" rx="18" fill="#fff6da"/>
+  <rect x="28" y="131" width="38" height="32" rx="12" fill="#5c8b67"/>
+  <circle cx="47" cy="147" r="9" fill="#ffeeB2"/>
+  <text x="78" y="141" font-family="sans-serif" font-size="17" fill="#483625">Zip - hyper tunnel courier</text>
+  <text x="78" y="164" font-family="sans-serif" font-size="18" fill="#3d4831">Seeds spotted. Route official.</text>
 
   <rect y="710" width="390" height="134" fill="#f4e1be"/>
   <g font-family="sans-serif" font-size="27" text-anchor="middle" fill="#ffffff">

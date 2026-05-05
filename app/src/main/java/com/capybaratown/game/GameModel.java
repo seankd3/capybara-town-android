@@ -22,15 +22,17 @@ public final class GameModel {
     public static final class Npc {
         public final Species species;
         public final String name;
+        public final String personality;
         public final String need;
         public final String requestKind;
         public final float x;
         public final float y;
         private boolean helped;
 
-        private Npc(Species species, String name, String need, String requestKind, float x, float y) {
+        private Npc(Species species, String name, String personality, String need, String requestKind, float x, float y) {
             this.species = species;
             this.name = name;
+            this.personality = personality;
             this.need = need;
             this.requestKind = requestKind;
             this.x = x;
@@ -86,9 +88,9 @@ public final class GameModel {
         registerSnackKind("seed");
         registerSnackKind("carrot");
         registerSnackKind("mint");
-        npcs.add(new Npc(Species.CAPYBARA, "Moss", "needs cool mint for the hydrotherapy pond", "mint", 250f, 330f));
-        npcs.add(new Npc(Species.GUINEA_PIG, "Pip", "needs berry enrichment for the forage table", "berry", 660f, 520f));
-        npcs.add(new Npc(Species.GERBIL, "Zip", "needs seeds for tunnel enrichment", "seed", 505f, 975f));
+        npcs.add(new Npc(Species.CAPYBARA, "Moss", "calm spa philosopher / sleepy hydrotherapy king", "needs cool mint for the hydrotherapy pond", "mint", 250f, 330f));
+        npcs.add(new Npc(Species.GUINEA_PIG, "Pip", "dramatic snack critic / tiny market goblin", "needs berry enrichment for the forage table", "berry", 660f, 520f));
+        npcs.add(new Npc(Species.GERBIL, "Zip", "hyper tunnel courier / conspiracy cartographer", "needs seeds for tunnel enrichment", "seed", 505f, 975f));
         snacksOnMap.add(new Snack("clover", 155f, 620f));
         snacksOnMap.add(new Snack("berry", 350f, 800f));
         snacksOnMap.add(new Snack("seed", 735f, 760f));
@@ -210,6 +212,48 @@ public final class GameModel {
         return "Enjoy the sanctuary celebration.";
     }
 
+    public String getCurrentResidentMomentText() {
+        if (won) {
+            return "Moss, Pip, and Zip declare the sanctuary 100% cozy and 12% snack crumbs.";
+        }
+        for (Npc npc : npcs) {
+            if (!npc.helped) {
+                if (getSnackCount(npc.requestKind) > 0) {
+                    return readyMoment(npc);
+                }
+                if (snacks > 0) {
+                    return waitingWithWrongSnackMoment(npc);
+                }
+                return idleMoment(npc);
+            }
+        }
+        return "The residents are comparing tiny thank-you notes.";
+    }
+
+    public String getCurrentResidentMomentSpeaker() {
+        if (won) {
+            return "Sanctuary update";
+        }
+        for (Npc npc : npcs) {
+            if (!npc.helped) {
+                return npc.name;
+            }
+        }
+        return "Sanctuary update";
+    }
+
+    public String getCurrentResidentMomentPersonality() {
+        if (won) {
+            return "group celebration";
+        }
+        for (Npc npc : npcs) {
+            if (!npc.helped) {
+                return npc.personality;
+            }
+        }
+        return "cozy neighbors";
+    }
+
     public String getToast() {
         return toastTime > 0f ? toast : "";
     }
@@ -264,13 +308,52 @@ public final class GameModel {
     private String helpMessage(Npc npc) {
         switch (npc.species) {
             case CAPYBARA:
-                return npc.name + " relaxes in the minty therapy pond!";
+                return npc.name + " murmurs, \"The mint has achieved pond enlightenment.\"";
             case GUINEA_PIG:
-                return npc.name + " starts forage-table enrichment!";
+                return npc.name + " gives the berries five squeaks and one crumb encore!";
             case GERBIL:
-                return npc.name + " refreshes the tunnel enrichment run!";
+                return npc.name + " updates the tunnel map: seeds were here all along!";
             default:
                 return "A neighbor feels helped.";
+        }
+    }
+
+    private String idleMoment(Npc npc) {
+        switch (npc.species) {
+            case CAPYBARA:
+                return "Moss: \"A good soak is polite soup.\"";
+            case GUINEA_PIG:
+                return "Pip opens snack court. Berry evidence pending.";
+            case GERBIL:
+                return "Zip mapped 3 tunnels and 1 tunnel-shaped nap.";
+            default:
+                return npc.name + " is having a small sanctuary thought.";
+        }
+    }
+
+    private String waitingWithWrongSnackMoment(Npc npc) {
+        switch (npc.species) {
+            case CAPYBARA:
+                return "Moss is waiting for mint. Pond crown reserved.";
+            case GUINEA_PIG:
+                return "Pip sniffs pouch. Berry review still pending.";
+            case GERBIL:
+                return "Zip files pouch under: not seeds, intriguing.";
+            default:
+                return npc.name + " is waiting for the right enrichment snack.";
+        }
+    }
+
+    private String readyMoment(Npc npc) {
+        switch (npc.species) {
+            case CAPYBARA:
+                return "Moss senses mint. Royal pond sigh loading.";
+            case GUINEA_PIG:
+                return "Pip sees berries. Snack court gasps.";
+            case GERBIL:
+                return "Zip sees seeds. Route official.";
+            default:
+                return npc.name + " is ready for care.";
         }
     }
 

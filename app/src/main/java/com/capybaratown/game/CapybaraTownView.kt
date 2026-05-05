@@ -74,10 +74,10 @@ class CapybaraTownView(context: Context) : View(context) {
     }
 
     private fun calculateWorldTransform() {
-        val availableHeight = height - 270f
+        val availableHeight = height - 330f
         scale = min(width / GameModel.WORLD_WIDTH, availableHeight / GameModel.WORLD_HEIGHT)
         offsetX = (width - GameModel.WORLD_WIDTH * scale) / 2f
-        offsetY = 128f
+        offsetY = 190f
     }
 
     private fun drawTown(canvas: Canvas) {
@@ -492,6 +492,7 @@ class CapybaraTownView(context: Context) : View(context) {
             textPaint.textSize = 20f
             canvas.drawText(fitText(toast, width - 178f, textPaint), 146f, 103f, textPaint)
         }
+        drawMomentCard(canvas)
 
         val bottom = height.toFloat()
         uiPaint.color = Color.rgb(244, 225, 190)
@@ -531,6 +532,30 @@ class CapybaraTownView(context: Context) : View(context) {
         textPaint.textAlign = Paint.Align.CENTER
         canvas.drawText(label, rect.centerX(), rect.centerY() + 10f, textPaint)
         textPaint.color = Color.rgb(65, 52, 37)
+    }
+
+    private fun drawMomentCard(canvas: Canvas) {
+        val top = 124f
+        val left = 16f
+        val right = width - 16f
+        uiPaint.color = Color.argb(48, 61, 48, 31)
+        canvas.drawRoundRect(RectF(left, top + 4f, right, top + 62f), 18f, 18f, uiPaint)
+        uiPaint.color = Color.rgb(255, 246, 218)
+        canvas.drawRoundRect(RectF(left, top, right, top + 58f), 18f, 18f, uiPaint)
+        uiPaint.color = Color.rgb(92, 139, 103)
+        canvas.drawRoundRect(RectF(left + 12f, top + 13f, left + 50f, top + 45f), 12f, 12f, uiPaint)
+        paint.style = Paint.Style.FILL
+        paint.color = Color.rgb(255, 238, 178)
+        canvas.drawCircle(left + 31f, top + 29f, 9f, paint)
+        textPaint.textAlign = Paint.Align.LEFT
+        textPaint.color = Color.rgb(72, 54, 37)
+        textPaint.textSize = 18f
+        val speaker = game.currentResidentMomentSpeaker
+        val personality = game.currentResidentMomentPersonality
+        canvas.drawText(fitText("$speaker - $personality", right - left - 74f, textPaint), left + 62f, top + 24f, textPaint)
+        textPaint.color = Color.rgb(61, 72, 49)
+        textPaint.textSize = 20f
+        canvas.drawText(fitText(game.currentResidentMomentText, right - left - 74f, textPaint), left + 62f, top + 48f, textPaint)
     }
 
     private fun drawMiniSnackStrip(canvas: Canvas, x: Float, y: Float) {

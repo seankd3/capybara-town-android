@@ -4,6 +4,7 @@ public final class GameModelTest {
     public static void main(String[] args) {
         collectsSnackAndHelpsEverySpecies();
         speciesRequestsRequireMatchingSnack();
+        residentMomentsReflectPersonalityAndProgress();
         resetRestoresStartingState();
         System.out.println("GameModelTest passed");
     }
@@ -43,6 +44,39 @@ public final class GameModelTest {
         assertEquals(1, game.getSnackCount("clover"), "unrequested snack remains");
     }
 
+    private static void residentMomentsReflectPersonalityAndProgress() {
+        GameModel game = new GameModel();
+        GameModel.Npc moss = game.getNpcs().get(0);
+        GameModel.Npc pip = game.getNpcs().get(1);
+
+        assertEquals("Moss", game.getCurrentResidentMomentSpeaker(), "starting moment speaker");
+        assertContains(game.getCurrentResidentMomentPersonality(), "spa philosopher", "Moss personality");
+        assertContains(game.getCurrentResidentMomentText(), "good soak", "Moss idle moment");
+
+        moveTo(game, 155f, 620f);
+        assertContains(game.getCurrentResidentMomentText(), "waiting for mint", "wrong snack moment");
+
+        moveTo(game, 725f, 1110f);
+        assertContains(game.getCurrentResidentMomentText(), "senses mint", "ready snack moment");
+        moveTo(game, moss.x, moss.y);
+        assertTrue(game.tryHelpNearby(), "Moss helped with mint");
+
+        assertEquals("Pip", game.getCurrentResidentMomentSpeaker(), "moment advances to Pip");
+        assertContains(game.getCurrentResidentMomentPersonality(), "snack critic", "Pip personality");
+        assertContains(game.getCurrentResidentMomentText(), "berries", "Pip moment mentions berries");
+
+        for (GameModel.Snack snack : game.getSnacksOnMap()) {
+            moveTo(game, snack.x, snack.y);
+        }
+        for (GameModel.Npc npc : game.getNpcs()) {
+            moveTo(game, npc.x, npc.y);
+            game.tryHelpNearby();
+        }
+        assertEquals("Sanctuary update", game.getCurrentResidentMomentSpeaker(), "win moment speaker");
+        assertContains(game.getCurrentResidentMomentText(), "100% cozy", "win moment");
+        assertContains(game.getCurrentResidentMomentPersonality(), "group celebration", "win personality");
+    }
+
     private static void resetRestoresStartingState() {
         GameModel game = new GameModel();
         moveTo(game, game.getSnacksOnMap().get(0).x, game.getSnacksOnMap().get(0).y);
@@ -65,9 +99,21 @@ public final class GameModelTest {
         }
     }
 
+    private static void assertEquals(String expected, String actual, String label) {
+        if (!expected.equals(actual)) {
+            throw new AssertionError(label + ": expected \"" + expected + "\" but was \"" + actual + "\"");
+        }
+    }
+
     private static void assertTrue(boolean value, String label) {
         if (!value) {
             throw new AssertionError(label);
+        }
+    }
+
+    private static void assertContains(String actual, String expectedPart, String label) {
+        if (!actual.contains(expectedPart)) {
+            throw new AssertionError(label + ": expected \"" + actual + "\" to contain \"" + expectedPart + "\"");
         }
     }
 }

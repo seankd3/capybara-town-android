@@ -1,5 +1,39 @@
 # CODEX REPORT
 
+## 2026-05-05 Resident Personality And Moment System
+
+### Built
+
+- Added original resident personality roles to the deterministic game model:
+  - Moss: calm spa philosopher / sleepy hydrotherapy king.
+  - Pip: dramatic snack critic / tiny market goblin.
+  - Zip: hyper tunnel courier / conspiracy cartographer.
+- Added `GameModel` resident moment getters for the active speaker, personality label, and current quote/social update.
+- Made moment text deterministic and progress-aware: idle thoughts, wrong-snack reactions, ready-for-care lines, and a celebration update.
+- Updated help feedback with resident-specific funny sanctuary flavor.
+- Added a warm Canvas moment card in `CapybaraTownView` and adjusted the world layout so it stays readable on phone screens.
+- Updated `README.md`, `docs/game-design.md`, and `docs/mock-visual.svg` to describe and show the funny rodent sanctuary life-sim direction.
+- Expanded `GameModelTest` to cover personality labels, moment progression, ready/wrong-snack text, and win-state moment text.
+
+### Verification Status
+
+- Passed: `./tools/run-logic-tests.sh`
+  - Output: `GameModelTest passed`
+- Passed: `xmllint --noout docs/mock-visual.svg`
+- Passed: `rsvg-convert docs/mock-visual.svg -o /tmp/capybara-town-personality.png`
+  - Rendered artifact: `/tmp/capybara-town-personality.png` at 74K.
+- Passed: `git diff --check`
+- Not run: Android Gradle/SDK build; local Gradle/SDK are unavailable in this environment.
+
+### Git / Push Status
+
+- Commit attempted with `feat: add sanctuary resident personalities`.
+- Commit failed with:
+
+```text
+fatal: Unable to create '/home/sean/Projects/capybara-town-android/.git/index.lock': Read-only file system
+```
+
 ## 2026-05-05 Visual Polish And Quest Loop Upgrade
 
 ### Built
