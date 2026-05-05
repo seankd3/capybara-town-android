@@ -107,9 +107,9 @@ class CapybaraTownView(context: Context) : View(context) {
         canvas.drawPath(path, paint)
 
         paint.style = Paint.Style.FILL
-        drawHouse(canvas, 130f, 210f, Color.rgb(179, 126, 81), Color.rgb(99, 75, 50), "bath")
+        drawHouse(canvas, 130f, 210f, Color.rgb(179, 126, 81), Color.rgb(99, 75, 50), "care")
         drawSnackStall(canvas, 610f, 400f)
-        drawHouse(canvas, 455f, 910f, Color.rgb(156, 131, 196), Color.rgb(85, 72, 119), "mail")
+        drawHouse(canvas, 455f, 910f, Color.rgb(156, 131, 196), Color.rgb(85, 72, 119), "quiet")
 
         drawPond(canvas)
         drawGardenRow(canvas, 620f, 625f)
@@ -480,7 +480,7 @@ class CapybaraTownView(context: Context) : View(context) {
         textPaint.textAlign = Paint.Align.LEFT
         canvas.drawText("${game.happiness}", 43f, 55f, textPaint)
         textPaint.textSize = 18f
-        canvas.drawText("happy", 42f, 82f, textPaint)
+        canvas.drawText("care", 42f, 82f, textPaint)
         drawMiniSnackStrip(canvas, 146f, 31f)
 
         textPaint.color = Color.rgb(59, 47, 32)
@@ -499,7 +499,7 @@ class CapybaraTownView(context: Context) : View(context) {
         helpButton.set(18f, bottom - 108f, width * 0.42f, bottom - 28f)
         pauseButton.set(width * 0.45f, bottom - 108f, width * 0.72f, bottom - 28f)
         resetButton.set(width * 0.75f, bottom - 108f, width - 18f, bottom - 28f)
-        drawButton(canvas, helpButton, "Help")
+        drawButton(canvas, helpButton, "Care")
         drawButton(canvas, pauseButton, if (game.isPaused) "Resume" else "Pause")
         drawButton(canvas, resetButton, "Reset")
 
@@ -511,9 +511,9 @@ class CapybaraTownView(context: Context) : View(context) {
             textPaint.color = Color.rgb(72, 54, 37)
             textPaint.textSize = 38f
             textPaint.textAlign = Paint.Align.CENTER
-            canvas.drawText("Town party!", width / 2f, height * 0.48f, textPaint)
+            canvas.drawText("Sanctuary cozy!", width / 2f, height * 0.48f, textPaint)
             textPaint.textSize = 27f
-            canvas.drawText("Snacks shared. Neighbors cozy.", width / 2f, height * 0.525f, textPaint)
+            canvas.drawText("Enrichment done. Residents safe.", width / 2f, height * 0.525f, textPaint)
             textPaint.textSize = 23f
             canvas.drawText("Reset for another round.", width / 2f, height * 0.555f, textPaint)
         }

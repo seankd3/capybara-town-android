@@ -1,15 +1,15 @@
 # Capybara Town Android
 
-Capybara Town is a first playable MVP of a cozy 2D Android game about a tiny town of capybaras, guinea pigs, and gerbils.
+Capybara Town is a first playable MVP of a cozy 2D Android rodent sanctuary game about caring for capybaras, guinea pigs, and gerbils.
 
 ## What Is Playable
 
 - Tap anywhere in town to move the little helper.
 - Pick up clover, berries, seeds, carrots, and mint scattered along paths and gardens.
-- Match species-specific requests: Moss wants mint for the bathhouse, Pip wants berries for the snack stall, and Zip wants seeds for the tunnel route.
-- Walk near Moss the capybara, Pip the guinea pig, and Zip the gerbil, then tap **Help** to deliver the requested snack.
-- Happiness rises as snacks are collected and neighbors are helped.
-- Reach 100 happiness by helping all three neighbors to unlock the town party.
+- Match species-specific care requests: Moss wants mint for the hydrotherapy pond, Pip wants berries for forage-table enrichment, and Zip wants seeds for tunnel enrichment.
+- Walk near Moss the capybara, Pip the guinea pig, and Zip the gerbil, then tap **Care** to deliver the requested snack enrichment.
+- Care rises as snacks are collected and residents are helped.
+- Reach 100 care by helping all three residents to unlock the sanctuary celebration.
 - Use **Pause** and **Reset** from the bottom controls.
 
 ## Build And Run
@@ -37,7 +37,7 @@ A deterministic non-Android smoke test can run with only a JDK:
 ./tools/run-logic-tests.sh
 ```
 
-The test verifies snack collection, species-specific snack requests, helping all three species, the win condition, and reset behavior.
+The test verifies snack collection, species-specific care requests, helping all three species, the win condition, and reset behavior.
 
 ## Project Notes
 
@@ -47,4 +47,4 @@ The test verifies snack collection, species-specific snack requests, helping all
 
 ## Current Visual Direction
 
-The game uses Canvas-only generated art: rounded animal sprites with shadows, a textured green town, layered dirt paths, a bath pond, snack stall, burrow, garden rows, trees, bushes, flowers, and a warm native Android HUD. No external art assets are required.
+The game uses Canvas-only generated art: rounded animal sprites with shadows, a textured green sanctuary, layered dirt paths, a therapy pond, forage table, burrow, garden rows, trees, bushes, flowers, and a warm native Android HUD. No external art assets are required.

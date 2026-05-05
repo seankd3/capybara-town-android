@@ -86,9 +86,9 @@ public final class GameModel {
         registerSnackKind("seed");
         registerSnackKind("carrot");
         registerSnackKind("mint");
-        npcs.add(new Npc(Species.CAPYBARA, "Moss", "needs cool mint for the bathhouse", "mint", 250f, 330f));
-        npcs.add(new Npc(Species.GUINEA_PIG, "Pip", "needs berry snacks for market day", "berry", 660f, 520f));
-        npcs.add(new Npc(Species.GERBIL, "Zip", "needs seeds for tunnel patrol", "seed", 505f, 975f));
+        npcs.add(new Npc(Species.CAPYBARA, "Moss", "needs cool mint for the hydrotherapy pond", "mint", 250f, 330f));
+        npcs.add(new Npc(Species.GUINEA_PIG, "Pip", "needs berry enrichment for the forage table", "berry", 660f, 520f));
+        npcs.add(new Npc(Species.GERBIL, "Zip", "needs seeds for tunnel enrichment", "seed", 505f, 975f));
         snacksOnMap.add(new Snack("clover", 155f, 620f));
         snacksOnMap.add(new Snack("berry", 350f, 800f));
         snacksOnMap.add(new Snack("seed", 735f, 760f));
@@ -102,7 +102,7 @@ public final class GameModel {
         happiness = 10;
         paused = false;
         won = false;
-        toast = "Tap paths to scamper. Gather snacks, then help neighbors.";
+        toast = "Tap paths to caretake. Gather snacks, then comfort sanctuary residents.";
         toastTime = 4f;
     }
 
@@ -128,7 +128,7 @@ public final class GameModel {
         for (Npc npc : npcs) {
             if (!npc.helped && distance(playerX, playerY, npc.x, npc.y) <= HELP_RADIUS) {
                 if (snacks <= 0) {
-                    showToast(npc.name + " squeaks politely: bring one snack!");
+                    showToast(npc.name + " squeaks politely: bring enrichment snack!");
                     return false;
                 }
                 if (getSnackCount(npc.requestKind) <= 0) {
@@ -143,7 +143,7 @@ public final class GameModel {
                 if (allHelped() || happiness >= 100) {
                     happiness = Math.max(happiness, 100);
                     won = true;
-                    showToast("Town party unlocked! Everyone is cozy and fed.");
+                    showToast("Sanctuary celebration unlocked! Everyone is cozy and cared for.");
                 }
                 return true;
             }
@@ -154,7 +154,7 @@ public final class GameModel {
 
     public void togglePaused() {
         paused = !paused;
-        showToast(paused ? "Paused under the willow." : "Back to town chores!");
+        showToast(paused ? "Paused under the willow." : "Back to sanctuary rounds!");
     }
 
     public float getPlayerX() {
@@ -200,14 +200,14 @@ public final class GameModel {
 
     public String getObjectiveText() {
         if (won) {
-            return "Complete: the whole town is happy.";
+            return "Complete: every resident is cared for.";
         }
         for (Npc npc : npcs) {
             if (!npc.helped) {
                 return "Bring " + npc.requestKind + " to " + npc.name + ": " + npc.need + ".";
             }
         }
-        return "Enjoy the town party.";
+        return "Enjoy the sanctuary celebration.";
     }
 
     public String getToast() {
@@ -264,11 +264,11 @@ public final class GameModel {
     private String helpMessage(Npc npc) {
         switch (npc.species) {
             case CAPYBARA:
-                return npc.name + " warms the bath stones. Happiness rises!";
+                return npc.name + " relaxes in the minty therapy pond!";
             case GUINEA_PIG:
-                return npc.name + " opens the squeaky snack stall!";
+                return npc.name + " starts forage-table enrichment!";
             case GERBIL:
-                return npc.name + " reopens the speedy tunnel route!";
+                return npc.name + " refreshes the tunnel enrichment run!";
             default:
                 return "A neighbor feels helped.";
         }

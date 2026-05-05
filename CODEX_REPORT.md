@@ -53,11 +53,25 @@ git status --short --branch
 
 ### Git / Push Status
 
-Codex could not commit/push because `.git` is read-only in this sandbox. The requested atomic commit attempt failed with:
+Codex reported a sandbox `.git/index.lock` blocker, but the resulting verified visual polish is now present in the pushed repository as:
 
 ```text
-fatal: Unable to create '/home/sean/Projects/capybara-town-android/.git/index.lock': Read-only file system
+893c49e feat: polish capybara town visuals
 ```
+
+## 2026-05-05 Sanctuary Direction Follow-Up
+
+### Built
+
+- Shifted the framing from generic town chores toward a rodent sanctuary: care score, resident care requests, hydrotherapy pond, forage enrichment, tunnel enrichment, and sanctuary celebration language.
+- Updated the native Canvas HUD and controls from `happy` / `Help` toward `care` / `Care`.
+- Updated game strings, README, design doc, and SVG mock visual to match the sanctuary direction Sean requested.
+
+### Verification Status
+
+- Passed: `./tools/run-logic-tests.sh`
+- Passed: `xmllint --noout docs/mock-visual.svg`
+- Passed: `rsvg-convert docs/mock-visual.svg -o /tmp/capybara-town-sanctuary.png`
 
 ## Built
 
