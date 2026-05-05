@@ -3,6 +3,7 @@ package com.capybaratown.game;
 public final class GameModelTest {
     public static void main(String[] args) {
         collectsSnackAndHelpsEverySpecies();
+        speciesRequestsRequireMatchingSnack();
         resetRestoresStartingState();
         System.out.println("GameModelTest passed");
     }
@@ -22,6 +23,24 @@ public final class GameModelTest {
         assertTrue(game.hasWon(), "win condition reached");
         assertEquals(3, game.helpedCountForTests(), "all species helped");
         assertTrue(game.getHappiness() >= 100, "happiness reached party threshold");
+    }
+
+    private static void speciesRequestsRequireMatchingSnack() {
+        GameModel game = new GameModel();
+        GameModel.Npc moss = game.getNpcs().get(0);
+        moveTo(game, 155f, 620f); // clover, not Moss's requested mint
+        moveTo(game, moss.x, moss.y);
+
+        assertEquals(1, game.getSnacks(), "wrong snack stays in pouch");
+        assertEquals(1, game.getSnackCount("clover"), "clover count tracked");
+        assertTrue(!game.tryHelpNearby(), "wrong snack cannot satisfy species request");
+        assertTrue(!moss.isHelped(), "Moss still waits for mint");
+
+        moveTo(game, 725f, 1110f);
+        moveTo(game, moss.x, moss.y);
+        assertTrue(game.tryHelpNearby(), "matching snack helps Moss");
+        assertEquals(0, game.getSnackCount("mint"), "requested mint spent");
+        assertEquals(1, game.getSnackCount("clover"), "unrequested snack remains");
     }
 
     private static void resetRestoresStartingState() {

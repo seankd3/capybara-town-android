@@ -1,53 +1,155 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" role="img" aria-labelledby="title desc">
-  <title id="title">Capybara Town MVP mock visual</title>
-  <desc id="desc">A phone-shaped mock of the cozy town map with UI, snacks, player, and three rodent neighbors.</desc>
-  <rect width="390" height="844" fill="#f7e5be"/>
-  <rect y="0" width="390" height="112" fill="#fff7e0"/>
-  <rect y="108" width="390" height="4" fill="#624f37"/>
-  <text x="20" y="42" font-family="sans-serif" font-size="26" fill="#413425">Happiness 10</text>
-  <text x="20" y="82" font-family="sans-serif" font-size="24" fill="#413425">Snacks 0</text>
-  <text x="192" y="44" font-family="sans-serif" font-size="18" fill="#413425">Help Moss at the bathhouse</text>
-  <rect x="26" y="126" width="338" height="596" rx="0" fill="#a4c87c"/>
-  <path d="M190 156 C130 250 310 285 250 390 C190 500 90 450 96 615 C160 680 250 660 320 690" fill="none" stroke="#e0c080" stroke-width="26" stroke-linecap="round"/>
-  <path d="M75 385 L318 452" fill="none" stroke="#e0c080" stroke-width="26" stroke-linecap="round"/>
-  <ellipse cx="116" cy="264" rx="58" ry="28" fill="#77adc3"/>
-  <ellipse cx="92" cy="255" rx="15" ry="8" fill="#e0f6f8"/>
-  <ellipse cx="138" cy="271" rx="18" ry="9" fill="#e0f6f8"/>
-  <rect x="70" y="204" width="70" height="55" rx="7" fill="#b07c52"/>
-  <path d="M60 210 L105 176 L150 210 Z" fill="#6c5339"/>
-  <rect x="260" y="260" width="70" height="55" rx="7" fill="#cf7a6f"/>
-  <path d="M250 266 L295 232 L340 266 Z" fill="#6e5143"/>
-  <rect x="195" y="564" width="70" height="55" rx="7" fill="#9a80c5"/>
-  <path d="M185 570 L230 536 L275 570 Z" fill="#5f4f80"/>
-  <ellipse cx="224" cy="628" rx="42" ry="18" fill="#704f33"/>
-  <g fill="#5b7642">
-    <ellipse cx="278" cy="410" rx="8" ry="22"/>
-    <ellipse cx="295" cy="410" rx="8" ry="22"/>
-    <ellipse cx="312" cy="410" rx="8" ry="22"/>
-    <ellipse cx="329" cy="410" rx="8" ry="22"/>
+  <title id="title">Capybara Town polished cozy slice mock visual</title>
+  <desc id="desc">A phone mock showing the warmer Canvas-only town direction with richer paths, bath pond, snack stall, burrow, typed snack UI, cute helper, capybara, guinea pig, and gerbil.</desc>
+  <rect width="390" height="844" fill="#f4e1be"/>
+  <rect x="10" y="8" width="362" height="104" rx="24" fill="#3d301f" opacity="0.14"/>
+  <rect x="10" y="8" width="362" height="104" rx="24" fill="#fff9e5"/>
+  <rect x="24" y="26" width="104" height="68" rx="20" fill="#6f5637"/>
+  <text x="43" y="55" font-family="sans-serif" font-size="25" fill="#ffffff">55</text>
+  <text x="42" y="82" font-family="sans-serif" font-size="18" fill="#ffffff">happy</text>
+  <g font-family="sans-serif" font-size="18" fill="#453623">
+    <rect x="146" y="31" width="56" height="28" rx="14" fill="#e8d7b9"/>
+    <circle cx="164" cy="45" r="7" fill="#b7425a"/>
+    <text x="177" y="51">x1</text>
+    <rect x="212" y="31" width="56" height="28" rx="14" fill="#fff4cd"/>
+    <ellipse cx="230" cy="45" rx="9" ry="7" fill="#e8c35c"/>
+    <text x="243" y="51">x1</text>
+    <rect x="278" y="31" width="56" height="28" rx="14" fill="#fff4cd"/>
+    <ellipse cx="296" cy="45" rx="12" ry="7" fill="#53a469"/>
+    <text x="309" y="51">x1</text>
   </g>
-  <circle cx="70" cy="394" r="8" fill="#76a649"/>
-  <circle cx="146" cy="472" r="8" fill="#b9465f"/>
-  <circle cx="311" cy="452" r="8" fill="#eecb6a"/>
-  <circle cx="92" cy="646" r="8" fill="#e2803e"/>
-  <circle cx="315" cy="674" r="8" fill="#5baa70"/>
-  <ellipse cx="118" cy="255" rx="32" ry="18" fill="#805f3a"/>
-  <ellipse cx="148" cy="249" rx="18" ry="16" fill="#5b432d"/>
-  <circle cx="151" cy="247" r="2.5" fill="#261e18"/>
-  <ellipse cx="292" cy="338" rx="28" ry="22" fill="#eec291"/>
-  <ellipse cx="304" cy="338" rx="13" ry="20" fill="#fff6e0"/>
-  <circle cx="306" cy="336" r="2.5" fill="#261e18"/>
-  <path d="M214 620 L190 636" stroke="#835b38" stroke-width="4" stroke-linecap="round"/>
-  <ellipse cx="230" cy="612" rx="24" ry="16" fill="#d39e5f"/>
-  <circle cx="246" cy="604" r="7" fill="#785232"/>
-  <circle cx="246" cy="610" r="2" fill="#261e18"/>
-  <ellipse cx="195" cy="444" rx="15" ry="22" fill="#56805e"/>
-  <circle cx="204" cy="432" r="8" fill="#fce7a6"/>
-  <circle cx="206" cy="431" r="2" fill="#374c37"/>
-  <rect x="22" y="736" width="92" height="72" rx="12" fill="#5b8c5a"/>
-  <rect x="128" y="736" width="92" height="72" rx="12" fill="#5b8c5a"/>
-  <rect x="276" y="736" width="92" height="72" rx="12" fill="#5b8c5a"/>
-  <text x="68" y="780" font-family="sans-serif" font-size="22" text-anchor="middle" fill="#ffffff">Help</text>
-  <text x="174" y="780" font-family="sans-serif" font-size="22" text-anchor="middle" fill="#ffffff">Pause</text>
-  <text x="322" y="780" font-family="sans-serif" font-size="22" text-anchor="middle" fill="#ffffff">Reset</text>
+  <text x="146" y="78" font-family="sans-serif" font-size="22" fill="#3b2f20">Bring seed to Zip</text>
+  <text x="146" y="103" font-family="sans-serif" font-size="18" fill="#6f5637">Pip opens the squeaky snack stall!</text>
+
+  <rect x="26" y="128" width="338" height="582" fill="#97c478"/>
+  <g opacity="0.34" fill="#639752">
+    <ellipse cx="60" cy="169" rx="8" ry="3"/>
+    <ellipse cx="282" cy="190" rx="10" ry="3"/>
+    <ellipse cx="86" cy="380" rx="8" ry="3"/>
+    <ellipse cx="314" cy="585" rx="11" ry="3"/>
+    <ellipse cx="112" cy="652" rx="9" ry="3"/>
+    <ellipse cx="238" cy="484" rx="7" ry="3"/>
+  </g>
+  <path d="M190 154 C130 252 310 286 250 390 C190 500 90 450 96 615 C160 680 250 660 320 690" fill="none" stroke="#b4945e" stroke-width="30" stroke-linecap="round"/>
+  <path d="M75 385 L318 452" fill="none" stroke="#b4945e" stroke-width="30" stroke-linecap="round"/>
+  <path d="M190 154 C130 252 310 286 250 390 C190 500 90 450 96 615 C160 680 250 660 320 690" fill="none" stroke="#e5c588" stroke-width="22" stroke-linecap="round"/>
+  <path d="M75 385 L318 452" fill="none" stroke="#e5c588" stroke-width="22" stroke-linecap="round"/>
+
+  <g>
+    <ellipse cx="116" cy="274" rx="72" ry="33" fill="#313027" opacity="0.14"/>
+    <ellipse cx="116" cy="264" rx="70" ry="36" fill="#5d9cb9"/>
+    <ellipse cx="116" cy="264" rx="56" ry="27" fill="#7abdcf"/>
+    <ellipse cx="94" cy="255" rx="15" ry="8" fill="#e8faf8" opacity="0.8"/>
+    <ellipse cx="142" cy="272" rx="18" ry="9" fill="#e8faf8" opacity="0.8"/>
+    <path d="M178 242 C168 228 188 222 178 208" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.55"/>
+    <path d="M196 248 C186 234 206 228 196 214" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.55"/>
+  </g>
+
+  <g>
+    <ellipse cx="111" cy="363" rx="45" ry="11" fill="#313027" opacity="0.14"/>
+    <rect x="70" y="204" width="70" height="55" rx="8" fill="#b37e51"/>
+    <path d="M60 210 L105 176 L150 210 Z" fill="#634b32"/>
+    <rect x="98" y="232" width="18" height="27" rx="5" fill="#4e3a2b"/>
+    <rect x="80" y="224" width="14" height="15" rx="4" fill="#ffeeB2"/>
+    <text x="105" y="249" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#4c3a2b">bath</text>
+  </g>
+
+  <g>
+    <ellipse cx="299" cy="396" rx="50" ry="12" fill="#313027" opacity="0.14"/>
+    <rect x="260" y="275" width="78" height="58" rx="8" fill="#cc7a6a"/>
+    <rect x="268" y="306" width="62" height="27" fill="#7a483d"/>
+    <rect x="252" y="260" width="24" height="18" rx="6" fill="#ffe5a8"/>
+    <rect x="276" y="260" width="24" height="18" rx="6" fill="#f59979"/>
+    <rect x="300" y="260" width="24" height="18" rx="6" fill="#ffe5a8"/>
+    <rect x="324" y="260" width="24" height="18" rx="6" fill="#f59979"/>
+    <circle cx="285" cy="319" r="7" fill="#b7425a"/>
+    <circle cx="307" cy="319" r="7" fill="#e5c15b"/>
+  </g>
+
+  <g>
+    <ellipse cx="230" cy="635" rx="54" ry="12" fill="#313027" opacity="0.14"/>
+    <ellipse cx="230" cy="628" rx="42" ry="18" fill="#7f5b39"/>
+    <ellipse cx="230" cy="640" rx="52" ry="15" fill="#b3854f"/>
+    <ellipse cx="230" cy="637" rx="30" ry="17" fill="#694f36"/>
+  </g>
+
+  <g fill="#567a40">
+    <rect x="278" y="408" width="82" height="36" rx="14"/>
+    <rect x="294" y="428" width="82" height="36" rx="14"/>
+  </g>
+  <g fill="#f4b164">
+    <circle cx="288" cy="423" r="4"/>
+    <circle cx="318" cy="421" r="4"/>
+    <circle cx="348" cy="422" r="4"/>
+  </g>
+  <g fill="#63a664">
+    <circle cx="72" cy="456" r="11"/>
+    <circle cx="58" cy="463" r="9"/>
+    <circle cx="86" cy="463" r="9"/>
+    <circle cx="314" cy="628" r="10"/>
+    <circle cx="300" cy="636" r="9"/>
+    <circle cx="328" cy="636" r="9"/>
+  </g>
+
+  <g>
+    <ellipse cx="118" cy="260" rx="37" ry="21" fill="#825e38"/>
+    <ellipse cx="148" cy="254" rx="17" ry="18" fill="#65462a"/>
+    <circle cx="137" cy="240" r="6" fill="#825e38"/>
+    <circle cx="154" cy="240" r="5" fill="#825e38"/>
+    <rect x="96" y="236" width="32" height="13" rx="6" fill="#f4e7cc"/>
+    <circle cx="110" cy="240" r="4" fill="#ffda79"/>
+    <circle cx="149" cy="252" r="2.5" fill="#261e18"/>
+    <circle cx="157" cy="253" r="2.2" fill="#261e18"/>
+    <path d="M150 260 Q156 267 164 260" fill="none" stroke="#261e18" stroke-width="2"/>
+  </g>
+  <g>
+    <ellipse cx="292" cy="338" rx="30" ry="23" fill="#efc391"/>
+    <ellipse cx="298" cy="338" rx="20" ry="22" fill="#fff7e1"/>
+    <circle cx="275" cy="329" r="8" fill="#ae6f4b"/>
+    <circle cx="309" cy="329" r="7" fill="#ae6f4b"/>
+    <circle cx="305" cy="345" r="6" fill="#f5918b"/>
+    <rect x="272" y="350" width="42" height="10" rx="5" fill="#543827"/>
+    <circle cx="300" cy="336" r="2.5" fill="#261e18"/>
+    <circle cx="309" cy="336" r="2.2" fill="#261e18"/>
+  </g>
+  <g>
+    <path d="M212 616 C190 626 186 654 164 648" fill="none" stroke="#7e5634" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="230" cy="612" rx="25" ry="16" fill="#d39e5f"/>
+    <ellipse cx="240" cy="610" rx="15" ry="13" fill="#e8b979"/>
+    <circle cx="246" cy="603" r="8" fill="#785232"/>
+    <circle cx="241" cy="595" r="4" fill="#daa268"/>
+    <rect x="209" y="586" width="29" height="11" rx="4" fill="#583b26"/>
+    <circle cx="246" cy="608" r="2.2" fill="#261e18"/>
+    <circle cx="254" cy="608" r="2" fill="#261e18"/>
+  </g>
+  <g>
+    <ellipse cx="195" cy="444" rx="15" ry="22" fill="#4f7d5c"/>
+    <rect x="183" y="444" width="24" height="20" rx="7" fill="#64976f"/>
+    <circle cx="197" cy="428" r="13" fill="#f8dea8"/>
+    <ellipse cx="194" cy="416" rx="18" ry="9" fill="#60432d"/>
+    <circle cx="194" cy="427" r="2.2" fill="#2c3025"/>
+    <circle cx="203" cy="428" r="2.2" fill="#2c3025"/>
+    <rect x="178" y="444" width="10" height="16" rx="4" fill="#ffeeB2"/>
+  </g>
+
+  <g fill="#f06670">
+    <rect x="68" y="148" width="12" height="7" rx="2"/>
+    <rect x="318" y="196" width="12" height="7" rx="2"/>
+    <rect x="155" y="660" width="12" height="7" rx="2"/>
+  </g>
+  <g fill="#ffcd5b">
+    <rect x="226" y="158" width="12" height="7" rx="2"/>
+    <rect x="72" y="610" width="12" height="7" rx="2"/>
+    <rect x="330" y="554" width="12" height="7" rx="2"/>
+  </g>
+
+  <rect y="710" width="390" height="134" fill="#f4e1be"/>
+  <g font-family="sans-serif" font-size="27" text-anchor="middle" fill="#ffffff">
+    <rect x="18" y="736" width="146" height="80" rx="14" fill="#4f8558"/>
+    <rect x="176" y="736" width="88" height="80" rx="14" fill="#4f8558"/>
+    <rect x="276" y="736" width="96" height="80" rx="14" fill="#846348"/>
+    <text x="91" y="785">Help</text>
+    <text x="220" y="785">Pause</text>
+    <text x="324" y="785">Reset</text>
+  </g>
 </svg>

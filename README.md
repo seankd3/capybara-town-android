@@ -5,8 +5,9 @@ Capybara Town is a first playable MVP of a cozy 2D Android game about a tiny tow
 ## What Is Playable
 
 - Tap anywhere in town to move the little helper.
-- Pick up snacks scattered along paths and gardens.
-- Walk near Moss the capybara, Pip the guinea pig, and Zip the gerbil, then tap **Help** to deliver snacks.
+- Pick up clover, berries, seeds, carrots, and mint scattered along paths and gardens.
+- Match species-specific requests: Moss wants mint for the bathhouse, Pip wants berries for the snack stall, and Zip wants seeds for the tunnel route.
+- Walk near Moss the capybara, Pip the guinea pig, and Zip the gerbil, then tap **Help** to deliver the requested snack.
 - Happiness rises as snacks are collected and neighbors are helped.
 - Reach 100 happiness by helping all three neighbors to unlock the town party.
 - Use **Pause** and **Reset** from the bottom controls.
@@ -36,10 +37,14 @@ A deterministic non-Android smoke test can run with only a JDK:
 ./tools/run-logic-tests.sh
 ```
 
-The test verifies snack collection, helping all three species, the win condition, and reset behavior.
+The test verifies snack collection, species-specific snack requests, helping all three species, the win condition, and reset behavior.
 
 ## Project Notes
 
 - Game design doc: [docs/game-design.md](docs/game-design.md)
 - Mock visual artifact: [docs/mock-visual.svg](docs/mock-visual.svg)
 - Codex build report: [CODEX_REPORT.md](CODEX_REPORT.md)
+
+## Current Visual Direction
+
+The game uses Canvas-only generated art: rounded animal sprites with shadows, a textured green town, layered dirt paths, a bath pond, snack stall, burrow, garden rows, trees, bushes, flowers, and a warm native Android HUD. No external art assets are required.

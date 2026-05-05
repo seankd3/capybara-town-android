@@ -2,7 +2,9 @@ package com.capybaratown.game;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public final class GameModel {
     public static final float WORLD_WIDTH = 900f;
@@ -21,14 +23,16 @@ public final class GameModel {
         public final Species species;
         public final String name;
         public final String need;
+        public final String requestKind;
         public final float x;
         public final float y;
         private boolean helped;
 
-        private Npc(Species species, String name, String need, float x, float y) {
+        private Npc(Species species, String name, String need, String requestKind, float x, float y) {
             this.species = species;
             this.name = name;
             this.need = need;
+            this.requestKind = requestKind;
             this.x = x;
             this.y = y;
         }
@@ -57,6 +61,7 @@ public final class GameModel {
 
     private final ArrayList<Npc> npcs = new ArrayList<>();
     private final ArrayList<Snack> snacksOnMap = new ArrayList<>();
+    private final LinkedHashMap<String, Integer> snackPouch = new LinkedHashMap<>();
     private float playerX;
     private float playerY;
     private float targetX;
@@ -75,9 +80,15 @@ public final class GameModel {
     public void reset() {
         npcs.clear();
         snacksOnMap.clear();
-        npcs.add(new Npc(Species.CAPYBARA, "Moss", "needs herbs for the bathhouse", 250f, 330f));
-        npcs.add(new Npc(Species.GUINEA_PIG, "Pip", "needs berry snacks for market day", 660f, 520f));
-        npcs.add(new Npc(Species.GERBIL, "Zip", "needs trail mix for tunnel patrol", 505f, 975f));
+        snackPouch.clear();
+        registerSnackKind("clover");
+        registerSnackKind("berry");
+        registerSnackKind("seed");
+        registerSnackKind("carrot");
+        registerSnackKind("mint");
+        npcs.add(new Npc(Species.CAPYBARA, "Moss", "needs cool mint for the bathhouse", "mint", 250f, 330f));
+        npcs.add(new Npc(Species.GUINEA_PIG, "Pip", "needs berry snacks for market day", "berry", 660f, 520f));
+        npcs.add(new Npc(Species.GERBIL, "Zip", "needs seeds for tunnel patrol", "seed", 505f, 975f));
         snacksOnMap.add(new Snack("clover", 155f, 620f));
         snacksOnMap.add(new Snack("berry", 350f, 800f));
         snacksOnMap.add(new Snack("seed", 735f, 760f));
@@ -120,6 +131,11 @@ public final class GameModel {
                     showToast(npc.name + " squeaks politely: bring one snack!");
                     return false;
                 }
+                if (getSnackCount(npc.requestKind) <= 0) {
+                    showToast(npc.name + " is waiting for " + npc.requestKind + ".");
+                    return false;
+                }
+                snackPouch.put(npc.requestKind, getSnackCount(npc.requestKind) - 1);
                 snacks -= 1;
                 npc.helped = true;
                 happiness += 30;
@@ -153,6 +169,15 @@ public final class GameModel {
         return snacks;
     }
 
+    public int getSnackCount(String kind) {
+        Integer count = snackPouch.get(kind);
+        return count == null ? 0 : count;
+    }
+
+    public Map<String, Integer> getSnackPouch() {
+        return Collections.unmodifiableMap(snackPouch);
+    }
+
     public int getHappiness() {
         return happiness;
     }
@@ -179,7 +204,7 @@ public final class GameModel {
         }
         for (Npc npc : npcs) {
             if (!npc.helped) {
-                return "Help " + npc.name + ": " + npc.need + ".";
+                return "Bring " + npc.requestKind + " to " + npc.name + ": " + npc.need + ".";
             }
         }
         return "Enjoy the town party.";
@@ -216,10 +241,15 @@ public final class GameModel {
             if (!snack.collected && distance(playerX, playerY, snack.x, snack.y) <= COLLECT_RADIUS) {
                 snack.collected = true;
                 snacks += 1;
+                snackPouch.put(snack.kind, getSnackCount(snack.kind) + 1);
                 happiness += 3;
                 showToast("Picked up " + snack.kind + ". Snack pouch: " + snacks + ".");
             }
         }
+    }
+
+    private void registerSnackKind(String kind) {
+        snackPouch.put(kind, 0);
     }
 
     private boolean allHelped() {
