@@ -27,11 +27,16 @@
 
 ### Git / Push Status
 
-- Commit attempted with `feat: add sanctuary resident personalities`.
-- Commit failed with:
+- Codex commit attempt with `feat: add sanctuary resident personalities` failed with:
 
 ```text
 fatal: Unable to create '/home/sean/Projects/capybara-town-android/.git/index.lock': Read-only file system
+```
+
+- Controller verified, shortened the mock/personality moment text to avoid UI truncation, then committed and pushed:
+
+```text
+ddce7af feat: add sanctuary resident personalities
 ```
 
 ## 2026-05-05 Visual Polish And Quest Loop Upgrade
